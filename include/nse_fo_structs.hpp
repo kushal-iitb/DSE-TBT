@@ -36,6 +36,37 @@ struct TradeMessage {
 	std::int32_t trade_quantity;
 };
 
+struct SnapshotRecoveryRequest {
+	char msg_type;
+	std::int16_t stream_id;
+	std::uint32_t start_seq_no;
+	std::uint32_t end_seq_no;
+};
+
+struct SnapshotRecoveryResponse {
+	TBT_Header header;
+	char msg_type;
+	char request_status;
+};
+
+struct SnapshotHeader {
+	std::int16_t trans_code;
+	std::int32_t size;
+	std::int32_t num_records;
+	std::uint32_t last_sequence_no;
+	std::int16_t stream_id;
+};
+
+struct SnapshotOrderRecord {
+	char msg_type;
+	std::int64_t timestamp_ns;
+	double order_id;
+	std::int32_t token;
+	char order_type;
+	std::int32_t price;
+	std::int32_t quantity;
+};
+
 #pragma pack(pop)
 
 

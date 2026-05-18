@@ -16,6 +16,9 @@ add_executable(dse-tbt
     src/spsc_queue.cpp
     src/main.cpp
     src/multicast_publisher.cpp
+    src/orderbook.cpp
+    src/TcpHandler.cpp
+    src/tick_history.cpp
 )
 
 target_include_directories(dse-tbt PRIVATE include)
